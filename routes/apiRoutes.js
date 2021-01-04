@@ -31,5 +31,20 @@ module.exports = function(app) {
       
           return res.json(note);
         });
-      });
-}
+    });
+
+    app.delete("/api/notes/:id", function(req, res) {
+        let unqiueID = req.params.id;
+        
+        const newNote = dbJSON.filter(note => note.id !== unqiueID);
+
+        dbJSON = newNote;
+
+        fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(dbJSON), (err) => {
+            if (err) {
+                return res.json({error: "Error writing to file"});
+            }
+            return res.json(newNote);
+        });
+    });
+};
