@@ -25,7 +25,6 @@ Main Features:
 
 * Project Repo: [Repository](https://github.com/jeishu/jot-that-down)
 * Deployed Site: [Website](https://jot-that-down.herokuapp.com/)
-* Video Demo: [Demo]()
 
 ## Demo
 
